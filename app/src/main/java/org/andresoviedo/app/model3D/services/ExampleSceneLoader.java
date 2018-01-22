@@ -174,6 +174,18 @@ public class ExampleSceneLoader extends SceneLoader {
 						errors.add(ex);
 					}
 
+					try {
+						// this has heterogeneous faces
+						Object3DData obj53 = Object3DBuilder.loadV5(parent.getAssets(), "models", "model_Nike Pegasus 33_20180105_134223551.obj");
+						obj53.centerAndScale(2.0f);
+						obj53.setPosition(new float[] { 2f, 0f, 0f });
+						obj53.setColor(new float[] { 1.0f, 1.0f, 1f, 1.0f });
+						// obj53.setDrawMode(GLES20.GL_TRIANGLE_FAN);
+						addObject(obj53);
+					} catch (Exception ex) {
+						errors.add(ex);
+					}
+
 					// test loading object without normals
 					try {
 						// this has heterogeneous faces
